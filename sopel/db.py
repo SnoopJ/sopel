@@ -482,7 +482,7 @@ class SopelDB:
                     key=key,
                     value=value,
                 )
-                session.add(new_nickvalue)
+                session.merge(new_nickvalue)
                 session.commit()
 
     def delete_nick_value(self, nick: str, key: str) -> None:
