@@ -618,7 +618,7 @@ class EntryPointPlugin(PyModulePlugin):
         ):
             try:
                 version = importlib.metadata.version(self.module.__package__)
-            except ValueError:
+            except:
                 # package name is probably empty-string; just give up
                 pass
 
