@@ -113,8 +113,8 @@ def test_entrypoint_plugin_get_version(plugin_tmpfile):
         entry_point = importlib.metadata.EntryPoint(
             'test_plugin', 'file_mod', 'sopel.plugins')
         plugin = handlers.EntryPointPlugin(entry_point)
-        plugin.module.__package__ = "FAKEFAKEFAKE"
         plugin.load()
+        plugin.module.__package__ = "FAKEFAKEFAKE"
         plugin.get_version()
     finally:
         sys.path.remove(distrib_dir)
