@@ -618,7 +618,7 @@ class EntryPointPlugin(PyModulePlugin):
         ):
             try:
                 version = importlib.metadata.version(self.module.__package__)
-            except:
+            except Exception:
                 # Just give up
                 # Can be caused by empty package name, mismatch between package/project names
                 pass
